@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATM</title>
+    <link rel="stylesheet" href="/css/Styles.css" />
+</head>
+<body>
+	<div class="container">
+		<h1 style="text-align:center">Welcome To the ATM System !</h1>
+
+		<div class="menu-container">
+    <form action="/checkpin" method="post">
+		<label for="num">Enter Account number:</label>
+		<input type="number" id="num" name="num" required>
+        <label for="pin">Enter PIN:</label>
+        <input type="number" id="pin" name="pin" required>
+        <button type="submit">Submit</button>
+		<p>No account?</p>
+		<a href="/createaccount">Create Account</a>
+		
+		<div style="color:red;" th:if="${error}" th:text="${error}"></div>
+</div>
+    </form>
+	
+
+	</div>
+	
+		
+	
+	
+
+	   
+</body>
+</html>

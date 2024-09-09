@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Balance</title>
+	<link rel="stylesheet" href="/css/Styles.css">
+    <style>
+        .balance-display {
+            padding: 10px;
+            color: green;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+	<div class="menu-container">
+    <!-- Display balance -->
+    <div class="balance-display" th:if="${customer}">
+       <h1> Current balance:</h1><h2> <span th:text="${customer.balance}"></span></h2>
+    </div>
+
+    <!-- Link to go back to menu -->
+    <a href="/menu" class="view-history">Back to Menu</a>
+	</div>
+</body>
+</html>

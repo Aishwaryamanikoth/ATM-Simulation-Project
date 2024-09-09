@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATM Menu</title>
+	<link rel="stylesheet" href="/css/Styles.css">
+</head>
+<body>
+
+	<form action="/logout" method="post" class="logout">
+	    <button type="submit">Logout</button> 
+	</form>
+	
+	<div class="menu-container">
+	    <h1>Welcome, <span th:text="${customer.name}"></span>!</h1>
+	    <form action="/deposit" method="post" >
+	        <label for="deposit" class="form-label">Deposit Amount:</label>
+	        <input type="number" id="deposit" name="amount" required>
+	        <button type="submit">Deposit</button>
+			<div class="deposit-message" th:if="${deposit}" th:text="${deposit}" ></div>
+
+	    </form>
+	    <form action="/withdraw" method="post">
+	        <label for="withdraw" class="form-label">Withdraw Amount:</label>
+	        <input type="number" id="withdraw" name="amount" step="0.01" required>
+	        <button type="submit">Withdraw</button>
+			<div class="error-message" th:if="${error}" th:text="${error}" style="padding: 10px; color: red;"></div>
+			<div class="success-message" th:if="${success}" th:text="${success}" ></div>
+
+	    </form>
+
+		<a style="margin:10px;" href="/checkbalance" class="view-history">Check Balance</a>
+
+
+	 <a style="margin:10px;" href="/transactions" class="view-history">View Transaction History</a>
+	</div>
+
+</body>
+</html>

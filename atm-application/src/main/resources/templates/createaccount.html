@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Account</title>
+    <link rel="stylesheet" href="/css/Styles.css" />
+</head>
+<body>
+	<form action="/logout" method="post" class="logout">
+		    <button type="submit">Back</button> 
+		</form>
+    <div class="menu-container">
+    <form action="/saveaccount" method="post">
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name="name" required style="width: 395px; height: 33px;"><br><br>
+
+		<label for="name">Set Account Number:</label>
+		        <input type="number" id="num" name="num" required style="border: 1px solid black;"><br><br>
+				
+        <label for="pin">Set PIN:</label>
+        <input type="number" id="pin" name="pin" required style="border: 1px solid black;"><br><br>
+
+        <button type="submit">Create Account</button>
+		<p><b>Note:</b> Please remember your Account Number and PIN for future transactions. Do not share them with anyone.</p>
+		<div class="error-message" th:if="${error}" th:text="${error}" style="padding: 10px; color: red;"></div>
+	</form>
+</div>
+
+</body>
+</html>
